@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Welcome, {{ student.name }}</h2>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <p><strong>Roll Number:</strong> {{ student.roll_number }}</p>
+            <p><strong>Email:</strong> {{ student.email }}</p>
+            <p><strong>Department:</strong> {{ student.department }}</p>
+            <p><strong>Year of Admission:</strong> {{ student.year_of_admission }}</p>
+            <p><strong>Date of Birth:</strong> {{ student.date_of_birth }}</p>
+
+            {% if student.profile_pic %}
+                <img src="{{ student.profile_pic.url }}" class="img-thumbnail" width="150">
+            {% else %}
+                <p>No profile picture uploaded.</p>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
